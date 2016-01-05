@@ -234,7 +234,7 @@ namespace Assets
 			}
 			
 			int x = GetGridLocationX(latitude);
-			int z = GetGridLocationY(longitude);
+			int z = GetGridLocationZ(longitude);
 			GridPoint point = null;
           
 			List<GridPoint> row = grid[z];
@@ -247,8 +247,6 @@ namespace Assets
 		/// <summary>
 		/// Returns grid coordinate based on gps coordinate
 		/// </summary>
-		/// <param name="gridSizeX">size of one grid</param>
-		/// <param name="minlat">smallest latitud on map</param>
 		/// <param name="coordinateX">GPS latitude</param>
 		/// <returns></returns>
 		public int GetGridLocationX(float coordinateX)
@@ -259,11 +257,9 @@ namespace Assets
 		/// <summary>
 		/// Returns grid coordinate based on gps coordinate
 		/// </summary>
-		/// <param name="gridSizeX">size of one grid</param>
-		/// <param name="minlon">smallest longitude on map</param>
-		/// <param name="coordinateX">GPS latitude</param>
+		/// <param name="coordinateZ">GPS latitude</param>
 		/// <returns></returns>
-		public int GetGridLocationY(float coordinateY)
+		public int GetGridLocationZ(float coordinateY)
 		{
             return (int)(gridResolution * (coordinateY - minlon));
 		}

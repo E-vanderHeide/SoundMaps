@@ -15,7 +15,7 @@
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityBuildTarget>WSAPlayer:21</UnityBuildTarget>
     <UnityVersion>5.2.3f1</UnityVersion>
     <RootNamespace></RootNamespace>
   </PropertyGroup>
@@ -26,7 +26,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_2_3;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;CROSS_PLATFORM_INPUT</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_2_3;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_METRO;UNITY_METRO_API;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_TEXTUREID_MAP;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_EVENT_QUEUE;ENABLE_NETWORK;UNITY_WSA;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_WP_8_1;UNITY_WINRT_8_1;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;MOBILE_INPUT</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +36,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_2_3;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;CROSS_PLATFORM_INPUT</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_2_3;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_METRO;UNITY_METRO_API;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_TEXTUREID_MAP;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_EVENT_QUEUE;ENABLE_NETWORK;UNITY_WSA;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_WP_8_1;UNITY_WINRT_8_1;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;MOBILE_INPUT</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -51,11 +51,17 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -68,15 +74,54 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraController.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\FirstPersonCharacter\Scripts\HeadBob.cs" />
+    <Compile Include="Assets\FirstPersonCharacter\Scripts\MobileLook.cs" />
+    <Compile Include="Assets\FirstPersonCharacter\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
+    <Compile Include="Assets\GPSLocation.cs" />
     <Compile Include="Assets\Map.cs" />
-    <Compile Include="Assets\MapObject.cs" />
-    <Compile Include="Assets\MapTest.cs" />
-    <Compile Include="Assets\OAuth.cs" />
-    <Compile Include="Assets\TerrainScript.cs" />
-    <Compile Include="Assets\Trie.cs" />
-    <Compile Include="Assets\parserTest.cs" />
+    <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\TestLocationService.cs" />
+    <Compile Include="Assets\Utility\ActivateTrigger.cs" />
+    <Compile Include="Assets\Utility\AutoMobileShaderSwitch.cs" />
+    <Compile Include="Assets\Utility\AutoMoveAndRotate.cs" />
+    <Compile Include="Assets\Utility\CameraRefocus.cs" />
+    <Compile Include="Assets\Utility\CurveControlledBob.cs" />
+    <Compile Include="Assets\Utility\DragRigidbody.cs" />
+    <Compile Include="Assets\Utility\DynamicShadowSettings.cs" />
+    <Compile Include="Assets\Utility\EventSystemChecker.cs" />
+    <Compile Include="Assets\Utility\FOVKick.cs" />
+    <Compile Include="Assets\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\Utility\FollowTarget.cs" />
+    <Compile Include="Assets\Utility\ForcedReset.cs" />
+    <Compile Include="Assets\Utility\LerpControlledBob.cs" />
+    <Compile Include="Assets\Utility\ObjectResetter.cs" />
+    <Compile Include="Assets\Utility\ParticleSystemDestroyer.cs" />
+    <Compile Include="Assets\Utility\PlatformSpecificContent.cs" />
+    <Compile Include="Assets\Utility\SimpleActivatorMenu.cs" />
+    <Compile Include="Assets\Utility\SimpleMouseRotator.cs" />
+    <Compile Include="Assets\Utility\SmoothFollow.cs" />
+    <Compile Include="Assets\Utility\TimedObjectActivator.cs" />
+    <Compile Include="Assets\Utility\TimedObjectDestructor.cs" />
+    <Compile Include="Assets\Utility\WaypointCircuit.cs" />
+    <Compile Include="Assets\Utility\WaypointProgressTracker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Resources\Materials\Vertex color unlit.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

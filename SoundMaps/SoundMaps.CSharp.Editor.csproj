@@ -117,6 +117,10 @@
       <Project>{ADB381CC-692E-C004-96AC-87C82755F592}</Project>
       <Name>SoundMaps.CSharp.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="SoundMaps.CSharp.csproj">
+      <Project>{06ACA8FD-BBB8-2D90-7D71-C96FD9FAC2D7}</Project>
+      <Name>SoundMaps.CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
@@ -135,6 +139,8 @@
     <Compile Include="Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MoverioUnityPlugin\MoverioController\Manifest\AndroidManifest.xml" />
+    <None Include="Assets\MoverioUnityPlugin\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />

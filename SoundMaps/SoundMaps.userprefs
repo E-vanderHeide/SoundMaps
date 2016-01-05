@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Map.cs">
+    <Files>
+      <File FileName="Assets\Map.cs" Line="166" Column="3" />
+      <File FileName="Assets\MapObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\TerrainScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\parserTest.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\ewoud_000\Documents\KTH\Multimodal interfaces\Project\SoundMaps\SoundMaps\Assets\TerrainScript.cs" line="78" />
+      <Breakpoint file="C:\Users\ewoud_000\Documents\KTH\Multimodal interfaces\Project\SoundMaps\SoundMaps\Assets\TerrainScript.cs" line="70" />
+      <Breakpoint file="C:\Users\ewoud_000\Documents\KTH\Multimodal interfaces\Project\SoundMaps\SoundMaps\Assets\parserTest.cs" line="53" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\TerrainScript.cs" line="69" offsetX="365" offsetY="1156" expression="uri" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

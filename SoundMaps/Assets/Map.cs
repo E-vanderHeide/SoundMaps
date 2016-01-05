@@ -14,8 +14,9 @@ namespace Assets
 		XmlDocument doc = new XmlDocument();
 		public int xSize, zSize;
 		public float minlat, minlon, maxlat, maxlon;
-		public const float gridResolution = 20000;
+		public const float gridResolution = 25000;
 		private List<List<GridPoint>> grid;
+		private Mesh mesh;
 
 		public struct Way
 		{
@@ -33,17 +34,53 @@ namespace Assets
 
 		private void Generate()
 		{
+			GetComponent<MeshFilter>().mesh = mesh = new Mesh();
+			mesh.name = "Procedural Grid";
+
 			grid = new List<List<GridPoint>>();
+
+			List<Vector3> vertices = new List<Vector3>();
+			Vector2[] uv = new Vector2[(xSize + 1) * (zSize + 1)];
+		
 			for (int i = 0, z = 0; z <= zSize; z++)
 			{
 				List<GridPoint> row = new List<GridPoint>();
 				for (int x = 0; x <= xSize; x++, i++)
 				{
-					row.Add(new GridPoint(new Vector3(x,0, z)));
-					
+					Vector3 vector = new Vector3(x, 0, z);
+                    row.Add(new GridPoint(vector));
+					vertices.Add(vector);
+					uv[i] = new Vector2(x / xSize, z / zSize);
+					//row.Reverse();
+
 				}
+				
 				grid.Add(row);
 			}
+
+			//reverse grid to avoid mirroring effect when rendering.
+			//grid.Reverse();
+			//foreach (List<GridPoint> row in grid)
+			//{f
+			//	row.Reverse();
+			//}
+
+			mesh.vertices = vertices.ToArray();
+			mesh.uv = uv;
+			int[] triangles = new int[xSize * zSize * 6];
+			for (int ti = 0, vi = 0, y = 0; y < zSize; y++, vi++)
+			{
+				for (int x = 0; x < xSize; x++, ti += 6, vi++)
+				{
+					triangles[ti] = vi;
+					triangles[ti + 3] = triangles[ti + 2] = vi + 1;
+					triangles[ti + 4] = triangles[ti + 1] = vi + xSize + 1;
+					triangles[ti + 5] = vi + xSize + 2;
+				}
+			}
+			mesh.triangles = triangles;
+			
+			mesh.RecalculateNormals();
 		}
 
 		private void Awake()
@@ -85,13 +122,13 @@ namespace Assets
 					}
 					else
 					{
-						//Check if this group of waynodes form a building
 						if (nd.Attributes[0].Name == "k")
 						{
 							switch (nd.Attributes["k"].InnerText)
 							{
 								case "building":
 									type = "Building";
+									//TODO: att outer way test to make better buildings.
 									break;
 								case "natural":
 									type = "Nature";
@@ -113,6 +150,10 @@ namespace Assets
 									}
 									break;
 								case "highway":
+									if (nd.Attributes["v"].InnerText == "motorWay")
+									{
+										type = "MotorWay";
+									}
 									type = "Road";
 									break;
 								case "railway":
@@ -128,9 +169,52 @@ namespace Assets
 				wayNode.type = type;
 				ways.Add(wayNode);
 			}
-
+		
 			Generate();
 			AddType(ways);
+
+			grid.Reverse();
+			int index = 0;
+			Color[] colors = new Color[mesh.vertices.Length];
+			
+			foreach (List<GridPoint> row in grid)
+			{
+				foreach (GridPoint point in row)
+				{
+                    GameObject soundObject = new GameObject();
+					Color color = Color.grey;
+					switch (point.type)
+					{
+						case "Building":
+							color = Color.red;
+							break;
+						case "Road":
+							color = Color.black;
+							break;
+						case "Nature":
+							if(point.soundObject == null)
+							{
+								Instantiate(soundObject, transform.TransformPoint(point.location), Quaternion.identity);
+								point.soundObject = soundObject;
+							}
+							color = Color.green;
+							break;
+						case "Railway":
+							color = Color.yellow;
+							break;
+						case "Motorway":
+							color = Color.blue;
+							break;
+						default:
+							break;
+					}
+
+					colors[index] = color;
+					index++;
+					//Gizmos.DrawSphere(transform.TransformPoint(point.location), 0.1f);
+				}
+			}
+			mesh.colors = colors;
 		}
 
 		private void OnDrawGizmos()
@@ -139,33 +223,8 @@ namespace Assets
 			{
 				return;
 			}
+
 			
-			
-			foreach (List<GridPoint> row in grid)
-			{
-				foreach(GridPoint point in row)
-				{
-					switch(point.type)
-					{
-						case "Building":
-							Gizmos.color = Color.red;
-							break;
-						case "Road":
-							Gizmos.color = Color.gray;
-							break;
-						case "Nature":
-							Gizmos.color = Color.green;
-							break;
-						case "Railway":
-							Gizmos.color = Color.yellow;
-							break;
-						default:
-							Gizmos.color = Color.white;
-							break;
-					}					
-					Gizmos.DrawSphere(transform.TransformPoint(point.location), 0.5f);
-				}
-			}
 		}
 
 		public GridPoint GetGridPoint(float latitude, float longitude)
@@ -189,10 +248,10 @@ namespace Assets
 			}
 			
 			int x = GetGridLocationX(latitude);
-			int y = GetGridLocationY(longitude);
+			int z = GetGridLocationY(longitude);
 			GridPoint point = null;
           
-			List<GridPoint> row = grid[y];
+			List<GridPoint> row = grid[z];
 			point = row[x];
 
 			
@@ -239,6 +298,7 @@ namespace Assets
 						if(newPoint != null)
 						{
 							newPoint.type = track.type;
+							
 							if (oldPoint != null)
 							{
 								float dX = Math.Abs(oldPoint.location.x - newPoint.location.x);
@@ -294,7 +354,7 @@ namespace Assets
 	public class GridPoint
 	{
 		public Vector3 location;
-
+		public GameObject soundObject;
 		public string type;
 
 		public GridPoint(Vector3 vector)
@@ -302,6 +362,7 @@ namespace Assets
 			location = vector;
 			type = "";
 		}
+
 
 	}
 
@@ -318,4 +379,6 @@ namespace Assets
 			lon = LON;
 		}
 	}
+
+
 }

@@ -2,3 +2,9 @@ SoundMaps/Temp/
 SoundMaps/Library/ShaderCache/
 SoundMaps/Library/metadata/
 SoundMaps/Assets/Standard Assets/
+SoundMaps/Library/UnityAssemblies/
+SoundMaps/ScriptAssemblies/
+SoundMaps/obj/
+Build/
+SoundMaps/Maps
+SoundMaps/SoundMaps.CSharp.csproj.user

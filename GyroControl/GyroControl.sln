@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyroControl.CSharp.Plugins", "GyroControl.CSharp.Plugins.csproj", "{4ECBA510-5027-A763-E16D-DB700242AA67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyroControl.CSharp", "GyroControl.CSharp.csproj", "{BB2256B7-2A10-59E0-33CD-D0A16EAE5E2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyroControl.CSharp.Editor", "GyroControl.CSharp.Editor.csproj", "{81FA9483-C398-473F-D54D-9D94CDD75AE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ECBA510-5027-A763-E16D-DB700242AA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECBA510-5027-A763-E16D-DB700242AA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECBA510-5027-A763-E16D-DB700242AA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECBA510-5027-A763-E16D-DB700242AA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2256B7-2A10-59E0-33CD-D0A16EAE5E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2256B7-2A10-59E0-33CD-D0A16EAE5E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2256B7-2A10-59E0-33CD-D0A16EAE5E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2256B7-2A10-59E0-33CD-D0A16EAE5E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81FA9483-C398-473F-D54D-9D94CDD75AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FA9483-C398-473F-D54D-9D94CDD75AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FA9483-C398-473F-D54D-9D94CDD75AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FA9483-C398-473F-D54D-9D94CDD75AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

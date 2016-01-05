@@ -51,19 +51,11 @@ namespace Assets
                     row.Add(new GridPoint(vector));
 					vertices.Add(vector);
 					uv[i] = new Vector2(x / xSize, z / zSize);
-					//row.Reverse();
 
 				}
 				
 				grid.Add(row);
 			}
-
-			//reverse grid to avoid mirroring effect when rendering.
-			//grid.Reverse();
-			//foreach (List<GridPoint> row in grid)
-			//{f
-			//	row.Reverse();
-			//}
 
 			mesh.vertices = vertices.ToArray();
 			mesh.uv = uv;
@@ -128,7 +120,7 @@ namespace Assets
 							{
 								case "building":
 									type = "Building";
-									//TODO: att outer way test to make better buildings.
+									//TODO: add outer way test to make better buildings.
 									break;
 								case "natural":
 									type = "Nature";
@@ -181,7 +173,6 @@ namespace Assets
 			{
 				foreach (GridPoint point in row)
 				{
-                    GameObject soundObject = new GameObject();
 					Color color = Color.grey;
 					switch (point.type)
 					{
@@ -192,11 +183,6 @@ namespace Assets
 							color = Color.black;
 							break;
 						case "Nature":
-							if(point.soundObject == null)
-							{
-								Instantiate(soundObject, transform.TransformPoint(point.location), Quaternion.identity);
-								point.soundObject = soundObject;
-							}
 							color = Color.green;
 							break;
 						case "Railway":
@@ -354,7 +340,6 @@ namespace Assets
 	public class GridPoint
 	{
 		public Vector3 location;
-		public GameObject soundObject;
 		public string type;
 
 		public GridPoint(Vector3 vector)

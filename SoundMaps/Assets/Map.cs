@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
-using System.Collections;
 using System.Xml;
 
 namespace Assets
@@ -77,11 +74,14 @@ namespace Assets
 
 		private void Awake()
 		{
+
+			TextAsset textAsset = (TextAsset)Resources.Load("KTH2", typeof(TextAsset));
+		
 			XmlDocument doc = new XmlDocument();
-			doc.Load(new XmlTextReader("Maps/KTH2.osm"));
+			doc.LoadXml(textAsset.text);
 			//Grid
 			XmlNode bounds = doc.GetElementsByTagName("bounds")[0];
-			minlat = float.Parse(bounds.Attributes["minlat"].InnerText);
+			minlat = float.Parse(bounds.Attributes["minlat"].InnerText); 
 			minlon = float.Parse(bounds.Attributes["minlon"].InnerText);
 			maxlat = float.Parse(bounds.Attributes["maxlat"].InnerText);
 			maxlon = float.Parse(bounds.Attributes["maxlon"].InnerText);

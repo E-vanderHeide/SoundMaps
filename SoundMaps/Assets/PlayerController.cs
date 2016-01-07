@@ -63,8 +63,8 @@ public class PlayerController : MonoBehaviour
         else
         {
 
-            latitude = (Input.location.lastData.latitude - 59) * 100000;
-            longitude = (Input.location.lastData.longitude - 18) * 100000;
+            latitude = Input.location.lastData.latitude;
+            longitude = Input.location.lastData.longitude;
 
             GPSData.text = "Latitude: " + latitude + " " +
             System.Environment.NewLine +
@@ -93,8 +93,8 @@ public class PlayerController : MonoBehaviour
 
         status.text = "Status: " + Input.location.status;
 
-        latitude = (Input.location.lastData.latitude - 59) * 100000;
-        longitude = (Input.location.lastData.longitude - 18) * 100000;
+		latitude = Input.location.lastData.latitude;
+        longitude = Input.location.lastData.longitude;
 
 
         GPSData.text = "Latitude: " + latitude + " " +
@@ -122,6 +122,7 @@ public class PlayerController : MonoBehaviour
     void movePlayer()
     {
 		GridPoint point = map.GetGridPoint(latitude, longitude);
+		
 		if(point != null)
 		{
 			Vector3 newLocation = point.location;

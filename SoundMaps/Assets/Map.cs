@@ -164,7 +164,6 @@ namespace Assets
 		
 			Generate();
 			AddType(ways);
-
 			grid.Reverse();
 			int index = 0;
 			Color[] colors = new Color[mesh.vertices.Length];
@@ -187,6 +186,7 @@ namespace Assets
 							break;
 						case "Railway":
 							color = Color.yellow;
+							
 							break;
 						case "Motorway":
 							color = Color.blue;
@@ -280,7 +280,8 @@ namespace Assets
 						if(newPoint != null)
 						{
 							newPoint.type = track.type;
-							
+							AddAudio(track.type, newPoint);
+
 							if (oldPoint != null)
 							{
 								float dX = Math.Abs(oldPoint.location.x - newPoint.location.x);
@@ -328,8 +329,33 @@ namespace Assets
 						}
 					}
 				}
-
 			}
+		}
+
+		private void AddAudio(string type, GridPoint newPoint)
+		{
+			GameObject soundObject = new GameObject(string.Format("Sound_{0}", type));
+			soundObject.transform.Translate(new Vector3(newPoint.location.x, 0, grid.Count - newPoint.location.z));
+			AudioSource audioSource = soundObject.AddComponent<AudioSource>();
+
+			audioSource.maxDistance = 10;
+			audioSource.loop = true;
+			audioSource.dopplerLevel = 0;
+			audioSource.spatialBlend = 1;
+			audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
+
+			switch (type)
+			{
+				case "Railway":
+					audioSource.clip = Resources.Load("train") as AudioClip;
+					break;
+				case "Nature":
+					audioSource.clip = Resources.Load("forest bird") as AudioClip;
+					break;
+				default:
+					break;
+			}
+			audioSource.Play();
 		}
 	}
 
@@ -337,19 +363,17 @@ namespace Assets
 	{
 		public Vector3 location;
 		public string type;
+		
 
 		public GridPoint(Vector3 vector)
 		{
 			location = vector;
 			type = "";
 		}
-
-
 	}
 
 	public class Node
 	{
-
 		public string id;
 		public float lat, lon;
 

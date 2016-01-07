@@ -121,6 +121,30 @@ public class PlayerController : MonoBehaviour
 	private Vector3 oldLocation = new Vector3(0,0,0);
     void movePlayer()
     {
+#if DEBUG
+		Vector3 newLocation = oldLocation;
+		if (Input.GetKey(KeyCode.RightArrow))
+		{
+			newLocation.z--;
+		}
+		if (Input.GetKey(KeyCode.LeftArrow))
+		{
+			newLocation.z++;
+		}
+		if (Input.GetKey(KeyCode.UpArrow))
+		{
+			newLocation.x++;
+		}
+		if (Input.GetKey(KeyCode.DownArrow))
+		{
+			newLocation.x--;
+		}
+
+		transform.Translate(newLocation - oldLocation);
+		oldLocation = newLocation;
+
+#else
+
 		GridPoint point = map.GetGridPoint(latitude, longitude);
 		
 		if(point != null)
@@ -130,9 +154,8 @@ public class PlayerController : MonoBehaviour
 
 			oldLocation = newLocation;
 		}
-		
-        //transform.Translate(latitude - oldLatitude, 0, longitude - oldLongitude, Space.World);
-    }
+#endif
+	}
 
 
 }
